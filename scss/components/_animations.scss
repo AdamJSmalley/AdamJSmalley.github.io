@@ -1,0 +1,112 @@
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(20px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transition: all 1s;
+}
+
+.hiddenLeft {
+    @extend .hidden;
+    transform: translateX(-100%);
+    transition-delay: 2s;
+}
+
+.showLeft {
+    @extend .show;
+    transform: translateX(0%);
+    transition-delay: 2s;
+}
+
+.hiddenRight {
+    @extend .hidden;
+    transform: translateX(100%);
+    //transition-delay: 4s;
+    
+}
+
+.showRight {
+    @extend .show;
+    transform: translateX(0%);
+    transition-delay: 4s
+}
+
+.hiddenUp {
+    @extend .hidden;
+    transform: translateY(-100%);
+    transition-delay: 1s;
+}
+
+.showUp {
+    @extend .show;
+    transform: translateY(0%);
+    transition-delay: 1s;
+}
+
+.showDown {
+    @extend .show;
+    transform: translateY(0%);
+    transition-delay: 3s;
+}
+
+.hiddenDown {
+    @extend .hidden;
+    transform: translateY(100%);
+    transition-delay: 3s;
+}
+
+.hiddenParent * {
+    @extend .hidden;
+    transition-delay: 2s;
+}
+
+.showParent * {
+    @extend .show;
+    transition-delay: 2s;
+}
+
+.hiddenParent::before {
+    @extend .hidden;
+    transition-delay: 2s;
+}
+
+.showParent::before {
+    @extend .show;
+    transition-delay: 2s;
+}
+
+.popup {
+    @extend .hidden;
+    visibility: hidden;
+}
+
+.showPopup {
+    @extend .show;
+    visibility: visible;
+}

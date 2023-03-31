@@ -1,0 +1,138 @@
+.portfolio {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Ubuntu Mono', sans-serif;
+
+    @media (orientation: portrait) {
+        //height: 200vh;
+        flex-direction: column-reverse;
+    }
+
+    .explanation {
+        padding: 10vmin;
+        flex-basis: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            gap: 3vmin;
+            //background-color: rgb(116, 223, 255);
+            border-radius: 3vh;
+            max-height: 80vmin;
+            align-items: center;
+            padding: 7vmin;
+
+            h2 {
+                margin-bottom: 2vmin;
+            }
+
+            p {
+                text-align: justify;
+            }
+
+            $btnPadding: 1vmax;
+
+
+
+            .btnContainer {
+                display: flex;
+                justify-content: space-around;
+                width: 85%;
+            }
+
+
+
+            a {
+                display: inline-block;
+                padding: 1vmin 2vmin;
+                background-color: blue; //rgb(31, 194, 244);
+                color: #eaeaea;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 1.5vmin;
+                font-size: 0.85vmax;
+                //line-height: calc(#{$fontSize} * 2);
+                align-items: center;
+                width: 7vmax;
+                border: 1px white solid;
+                /*                     display: flex;
+        justify-content: center;
+        flex-grow: 0; */
+                //max-width: 10vmin;
+                //margin-right: 3vmin;
+                //display: table-cell;
+                //vertical-align: middle;
+
+                i {
+                    margin-right: 1vmin;
+                    //font-size: calc(#{$fontSize} * 1);
+                }
+            }
+
+            a:hover {
+                background-color: rgb(1, 174, 226);
+            }
+
+        }
+
+    }
+
+    .graphic {
+        //background-image: url("../images/monitor.png");
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-width: 100vmin;
+        min-height: 100vmin;
+    }
+}
+
+#app {
+    .graphic {
+        background-image: url("../images/phone.png");
+    }
+}
+
+#website {
+.graphic {
+    background-image: url("../images/monitor.png");
+
+    iframe {
+        position: relative;
+        top: 18.8%;
+        width: 74.6%;
+        left: 0.4%;
+        height: 47.8%;
+        border: none;
+    }
+
+    @media (orientation: portrait) {
+        background-image: url("../images/phone.png");
+
+        iframe {
+            /* top: 10%;
+            width: 74.6%;
+            left: 10%;
+            height: 47.8%; */
+
+            top: -49.6%;
+            width: 106%;
+            left: -3.2%;
+            height: 195.5%;
+            transform: scale(0.4);
+            border-radius: 10vmin;
+        }
+
+        iframe::-webkit-scrollbar {
+            display: none;
+        }
+
+    }
+}
+
+}

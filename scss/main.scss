@@ -1,0 +1,48 @@
+//use components
+@use 'components/cube';
+@use 'components/animations';
+@use 'components/marquee';
+
+//use sections
+@use 'sections/home';
+@use 'sections/portfolio';
+@use 'sections/timeline';
+@use 'sections/contact';
+
+
+$darkText: 'black';
+$meHeight: '15vmin';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+
+    text-align: center;
+    font-family: 'Ubuntu Mono', sans-serif;
+    font-size: 1.3vmax;
+    font-family: 'Noto Sans', sans-serif;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+
+    h2 {
+        font-size: 2.6max;
+    }
+
+    section {
+        //width: 100vw;
+        height: 100vh;
+        //background-image: url('../images/background.avif');
+        background-size: contain;
+        background-repeat: no-repeat;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+
+<head>
+    <title>Adam Smalley - Front End Developer</title>
+    <!-- NEED FAVICON -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link defer rel="stylesheet" href="main.css" />
+    <!-- Dependencies -->
+    <script src="https://kit.fontawesome.com/cc41768a59.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tilt Prism|Asap|Orbitron|Special Elite|Ubuntu Mono|Noto Sans">
+    <!-- Add JavaScript -->
+    <script defer type="module" src="scripts/main.js"></script>
+</head>
+
+<body>
+    <section id="intro">
+        <div class="text">
+            <h1 id="title">Adam</br>Smalley</h1>
+            <div id="poem">Code is my canvas,</br>driven by innovation,</br>powered by technology.</br>
+            </div>
+        </div>
+
+        <!-- Cube -->
+        <div class="cube-container">
+            <div class="cube">
+                <div class="cube-face" id="front"></div>
+                <div class="cube-face" id="back"></div>
+                <div class="cube-face" id="left"></div>
+                <div class="cube-face" id="right"></div>
+                <div class="cube-face" id="top"></div>
+                <div class="cube-face" id="bottom">
+                    <img id='me' src="images/me.png" />
+                    <p id="bio">I have been writing code since the age of 12 and I have developed two websites (check
+                        the projects section for specifics). Before that, I spent over two years as an ERP software
+                        consultant. I recently completed a software engineering internship and am eager to continue my
+                        career as a developer, which is my true passion. I have completed many personal projects in my
+                        free time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="app">
+        <div class="explanation hiddenLeft">
+            <div class="box">
+                <h2>Stress Buster</h2>
+                <P>I am developing an app in partnership with my mother using React Native and creating a backend with
+                    PHP. The app uses a common hynotherapy technique to help people cope with stress. It also allows my
+                    mothers clients to access personalised recordings she creates for them from a mobile device. The app
+                    is still in development. Here is a preview of how it looks so far.</P>
+            </div>
+        </div>
+        <div class="graphic hiddenRight">
+            <!-- <iframe src="https://swanleyhypnotherapist.co.uk/"></iframe> -->
+        </div>
+    </section>
+
+    <section class="portfolio" id="website">
+        <div class="explanation hiddenLeft">
+            <div class="box">
+                <h2>Swanley Hypnotherapist</h2>
+                <P>I created a website for my Mother's hynotherapy business. I created the site in wordpress along
+                    with
+                    two custom addons. One was a custom contact form. The other creates the button that, when
+                    clicked,
+                    changes the background colour to that location.</P>
+
+                <div class="btnContainer">
+                    <a href="https://swanleyhypnotherapist.co.uk/" target="_blank"><i class="fa fa-globe"
+                            aria-hidden="true"></i> Website</a>
+                </div>
+
+                <div class="btnContainer">
+                    <a href="https://swanleyhypnotherapist.co.uk/#contact" target="_blank"> <i
+                            class="fa-solid fa-eye"></i>Contact Form</a>
+                    <a href="https://swanleyhypnotherapist.co.uk/#location" target="_blank"> <i
+                            class="fa-solid fa-eye"></i>Map Buttons</a>
+                </div>
+
+                <div class="btnContainer">
+                    <a href="https://github.com/AdamJSmalley/contact-form" target="_blank"> <i
+                            class="fa-brands fa-github"></i>Github</a>
+                    <a href="https://github.com/AdamJSmalley/JQueryHiddenSection" target="_blank"> <i
+                            class="fa-brands fa-github"></i>Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="graphic hiddenRight">
+            <iframe src="https://swanleyhypnotherapist.co.uk/"></iframe>
+        </div>
+    </section>
+
+    <section class="portfolio hiddenLeft" id="website">
+        <div class="explanation">
+            <div class="box">
+                <h2>Scrapy Argos Scraper</h2>
+                <P>This scrapy project uses a custom spider to scrape product data from Argos. It scrapes the URL, price
+                    name and product categories. It stores the scraped data in a MySQL database.</P>
+
+                <div class="btnContainer">
+                    <a href="https://github.com/AdamJSmalley/ArgosScraper" target="_blank"><i
+                            class="fa-brands fa-github" aria-hidden="true"></i> Github</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="timeline"> -->
+    <section data-org="hogarth" class="container hiddenParent">
+        <!-- <div class="wrapper hidden"> -->
+        <!-- <div class="mask"></div> -->
+        <div class="textBox">
+            <img src="/images/timeline/logo/hogarth.svg" />
+            <h2>Engineering Intern</h2>
+            <h3>WPP - Hogarth Worldwide</h3>
+            <small>April - May 2022</small>
+            <ul>
+                <li>I created dynamic, customisable ads for clients including Royal Mail and Ebay. I used HTML, CSS
+                    and
+                    JavaScript to enable the end user to tweak everything from the colours, to the content, to the
+                    animation
+                    timings and parameters.</li>
+                <li>I engineered an automated Javascript report generator using CSS grid and flexbox to make it
+                    responsive.
+                    The report inputs JSON data and creates a graph and report using Handlebars.js and chart.js.
+                </li>
+                <li>I investigated and reported my findings on the use of a new API for a client project scope.</li>
+            </ul>
+            <p>I relished the chance to work on a variety of projects, as it aligned with my passion to learn about
+                new
+                technologies and helped to broaden my technical knowledge. I also enjoyed working with many
+                different teams.
+            </p>
+            <!-- </div> -->
+        </div>
+    </section>
+    <section data-org="apex" id="apex" class="container hiddenParent">
+        <div class="textBox">
+            <img src="/images/timeline/logo/apex.png" />
+            <h2>M3 technical consultant</h2>
+            <h3>Apex Systems</h3>
+            <small>January 2019 - November 2022</small>
+            <p>
+                My main duty was to consult with international clients to devise a data migration plan by analysing
+                customer requirements. I then worked with them to devise a solution to migrate data from their old
+                ERP to their new cloud-based ERP. I liked how I got to work as part of many different teams and form
+                relationships with lots of different people. I feel this helped me develop my team working and
+                communication skills. I utilized SQL to get data from the legacy system and excel to clean and
+                manipulate the data. I also:
+            </p>
+            <ul>
+                <li>Designed and developed a tool (using VBA and Excel) to streamline data uploads during my
+                    downtime.</li>
+                <li>Built customisation scripts in Javascript.</li>
+            </ul>
+        </div>
+    </section>
+    <section data-org="uon" class="container hiddenParent">
+        <div class="textBox">
+            <!-- <div class="foo"> -->
+            <img src="/images/timeline/logo/uon.svg" />
+            <h2>BSc Industrial Economics</h2>
+            <h3>University of Nottingham</h3>
+            <small>2015 - 2018</small>
+            <p>I graduated with a <b>2:1</b></p>
+            <!-- </div> -->
+        </div>
+    </section>
+    <section data-org="wgsb" class="container hiddenParent">
+        <div class="textBox">
+            <img src="/images/timeline/logo/wgsb.png" />
+            <h2>Wilmington Grammar School for Boys</h2>
+            <small>2008 - 2015</small>
+            <p>Mathmatics (A)
+
+                Physics (B)
+
+                Economics (B)
+
+                AS-Level Systems and Controls (B)
+
+                7 A*’s, 3 A’s and a distinction in an ICT OCR national
+            </p>
+        </div>
+    </section>
+    <!-- </section> -->
+    <!-- Contact form-->
+    <section id="contact">
+        <div id="main">
+            <div id="text" class="hiddenUp">
+                <h2>Lets make</h2>
+                <h2>it happen</h2>
+            </div>
+            <button id="contactBtn" class="hidden" type="button">Get in touch</button>
+        </div>
+        <div id="wrapper" class="popup">
+            <div id="body">
+                <i id="closeBtn" class="fa fa-times" aria-hidden="true"></i>
+                <div id="form">
+                    <!-- <form id="contactForm"> -->
+                    <input type="text" name="name" placeholder="Name" />
+                    <input type="email" name="email" placeholder="Email Address" />
+                    <textarea name="message" rows="5" placeholder="Message"></textarea>
+                    <button id="contactBtn" type="button">Send</button>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+        <div id="bottom" class="hiddenDown">
+            <div id="marquee">
+                <ul class="skills">
+                    <li><i class="fab fa-square-js"></i>JavaScript</li>
+                    <li><i class="fab fa-html5"></i>HTML</li>
+                    <li><i class="fab fa-css3-alt"></i>CSS</li>
+                    <li><i class="fab fa-php"></i>PHP</li>
+                    <li><i class="fab fa-wordpress"></i>Wordpress</li>
+                    <li><i class="fas fa-database"></i>MySQL</li>
+                    <li><i class="fab fa-git"></i>Git</li>
+                    <li><i class="fas fa-people-group"></i>Teamwork</li>
+                    <li><i class="fas fa-comment"></i>Communication</li>
+                    <li><i class="fas fa-puzzle-piece"></i>Problem-solving</li>
+                    <li><i class="fas fa-eye"></i>Attention to detail</li>
+                    <li><i class="fas fa-lightbulb"></i>Creativity</li>
+                </ul>
+            </div>
+            <div id="footer">
+                <div id="aboutSite">
+                    Designed and built by Adam Smalley
+                </div>
+                <div id="social">
+                    <a href="https://www.linkedin.com/in/adam-smalley-5b1b3b1a3/" target="_blank"><i
+                            class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/adam-smalley-5b1b3b1a3/" target="_blank"><i
+                            class="fa-brands fa-github" aria-hidden="true"></i></a>
+                </div>
+                <div id="copy">
+                    Available for employment and freelance work
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

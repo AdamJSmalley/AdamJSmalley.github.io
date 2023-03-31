@@ -1,0 +1,78 @@
+$size: 30vmin; //22
+$offset: $size * 0.5;
+
+@mixin box {
+  width: $size;
+  height: $size;
+}
+
+#intro {
+
+  .cube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .cube {
+      @include box;
+      position: relative;
+      transform-style: preserve-3d;
+      border: none;
+      transform: rotateZ(0deg) rotateX(-10deg);
+
+      .cube-face {
+        @include box;
+        position: absolute;
+        text-align: center;
+        //padding: 100px 0px;
+        border: 3px solid white;
+        font-size: $size * 0.13;
+        line-height: $size * 0.15;
+        //box-sizing: border-box;
+        background-color: rgb(0, 0, 0);
+        //background-size: contain;
+        //grid-area: inner-div;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      i {
+        font-size: $size * 0.45;
+      }
+
+      #front {
+        transform: translateZ($offset);
+        //color: red;
+      }
+
+      #back {
+        transform: translateZ($offset * -1) rotateY(180deg);
+        //color: blue;
+      }
+
+      #left {
+        right: $offset;
+        transform: rotateY(-90deg);
+        //color: green;
+      }
+
+      #right {
+        left: $offset;
+        transform: rotateY(90deg);
+      }
+
+      #top {
+        bottom: $offset;
+        transform: rotateX(90deg);
+      }
+
+      #bottom {
+        top: $offset;
+        transform: rotateX(-90deg);
+      }
+    }
+  }
+}

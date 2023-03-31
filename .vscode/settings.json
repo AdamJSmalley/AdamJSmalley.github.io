@@ -1,0 +1,17 @@
+{
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "liveSassCompile.settings.formats": [
+        
+        {
+            "format": "compressed",
+            "extensionName": ".css",
+            "savePath": "/",
+            "savePathReplacementPairs": null
+        }
+    ],
+    "liveSassCompile.settings.watch": [
+        "**/*.scss",
+        "**/*.css",
+        "!**/node_modules/**"
+    ]
+}
