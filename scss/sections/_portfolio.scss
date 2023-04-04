@@ -2,7 +2,7 @@
     background-color: white;
     display: flex;
     justify-content: center;
-    font-family: 'Ubuntu Mono', sans-serif;
+    font-family: 'IBM Plex Serif', sans-serif;
 
     @media (orientation: portrait) {
         //height: 200vh;
@@ -10,7 +10,7 @@
     }
 
     .explanation {
-        padding: 10vmin;
+        padding: 4vmin; //10vmin;
         flex-basis: 33%;
         display: flex;
         flex-direction: column;
@@ -42,7 +42,7 @@
             .btnContainer {
                 display: flex;
                 justify-content: space-around;
-                width: 85%;
+                width: 95%;
             }
 
 
@@ -55,22 +55,14 @@
                 text-decoration: none;
                 font-weight: bold;
                 border-radius: 1.5vmin;
-                font-size: 0.85vmax;
-                //line-height: calc(#{$fontSize} * 2);
+                font-size: 1.4vh;
                 align-items: center;
-                width: 7vmax;
+                width: 13vh;
                 border: 1px white solid;
-                /*                     display: flex;
-        justify-content: center;
-        flex-grow: 0; */
-                //max-width: 10vmin;
-                //margin-right: 3vmin;
-                //display: table-cell;
-                //vertical-align: middle;
+                font-family: 'Poppins', sans-serif;
 
                 i {
-                    margin-right: 1vmin;
-                    //font-size: calc(#{$fontSize} * 1);
+                    margin-right: 1vh;
                 }
             }
 
@@ -83,7 +75,7 @@
     }
 
     .graphic {
-        //background-image: url("../images/monitor.png");
+        //background-image: url("../images/monitor.webp");
         background-position: right;
         background-size: contain;
         background-repeat: no-repeat;
@@ -94,13 +86,13 @@
 
 #app {
     .graphic {
-        background-image: url("../images/phone.png");
+        background-image: url("../images/devices/phone.webp");
     }
 }
 
 #website {
 .graphic {
-    background-image: url("../images/monitor.png");
+    background-image: url("../images/devices/monitor.webp");
 
     iframe {
         position: relative;
@@ -112,7 +104,7 @@
     }
 
     @media (orientation: portrait) {
-        background-image: url("../images/phone.png");
+        background-image: url("../images/devices/phone.webp");
 
         iframe {
             /* top: 10%;

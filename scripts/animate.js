@@ -15,12 +15,27 @@ const observerFactory = (selector) => {
                 element.classList.add(`show${selector}`);
                 element.classList.remove(`hidden${selector}`);
 
+                //change the background image when the user scrolls through the timeline
                 if (selector == 'Parent') {
-                    //element.style.backgroundImage = `url('.//images/timeline/background/${element.dataset.org}.png')`;
                     for (let i = 0; i < elements.length; i++) {
-                        elements[i].style.backgroundImage = `url('.//images/timeline/background/${element.dataset.org}.png')`;
+                        elements[i].style.backgroundImage = `url('.//images/timeline/background/${element.dataset.org}.webp')`;
                     }
                 }
+
+                //if(selector == 'Left') {
+                    //how to check if element.dataset.lazy-id existance?
+                    //how to check if element.dataset.lazy-id is not null?
+                    
+
+                    //if('lazy-id' in element.dataset) {
+                        //Q:what is wrong with this code?
+                        //console.log(element);
+                        //let lazyId = element.dataset.lazy-id
+                        //const lazyElement = document.getElementById(lazyId);
+                        //lazyElement.loading = 'eager';
+                        //lazyElement.removeAttribute('data-lazy-id');
+                    //}
+               //// }
 
             } else {
                 element.classList.add(`hidden${selector}`);

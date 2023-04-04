@@ -1,9 +1,21 @@
-$size: 30vmin; //22
-$offset: $size * 0.5;
+/* $size: 26vmin; //22
+
+$offset: $size * 0.5; */
+
+:root {
+  --size: 26vmin;
+  --offset: calc(var(--size) * 0.5); 
+}
+
+@media (orientation: portrait) {
+  :root {
+    --size: 42vmin !important;
+  }
+}
 
 @mixin box {
-  width: $size;
-  height: $size;
+  width: var(--size);
+  height: var(--size)
 }
 
 #intro {
@@ -27,51 +39,52 @@ $offset: $size * 0.5;
         text-align: center;
         //padding: 100px 0px;
         border: 3px solid white;
-        font-size: $size * 0.13;
-        line-height: $size * 0.15;
+        font-size: calc(var(--size) * 0.13);
+        line-height: caLC(var(--size) * 0.15);
         //box-sizing: border-box;
         background-color: rgb(0, 0, 0);
         //background-size: contain;
         //grid-area: inner-div;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
       }
 
       i {
-        font-size: $size * 0.45;
+        font-size: calc(var(--size) * 0.45);
       }
 
       #front {
-        transform: translateZ($offset);
+        transform: translateZ(var(--offset));
         //color: red;
       }
 
       #back {
-        transform: translateZ($offset * -1) rotateY(180deg);
+        transform: translateZ(calc(var(--offset) * -1)) rotateY(180deg);
         //color: blue;
       }
 
       #left {
-        right: $offset;
+        right: var(--offset);
         transform: rotateY(-90deg);
         //color: green;
       }
 
       #right {
-        left: $offset;
+        left: var(--offset);
         transform: rotateY(90deg);
       }
 
       #top {
-        bottom: $offset;
+        bottom: var(--offset);
         transform: rotateX(90deg);
       }
 
       #bottom {
-        top: $offset;
+        top: var(--offset);
         transform: rotateX(-90deg);
+        justify-content: center;
       }
     }
   }

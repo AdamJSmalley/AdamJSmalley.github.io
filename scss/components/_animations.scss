@@ -24,6 +24,12 @@
     opacity: 0;
     filter: blur(20px);
     transition: all 1s;
+    background-image: none !important;
+}
+
+.hiddenPage {
+    @extend .hidden;
+    transition-delay: 1s !important;
 }
 
 .show {
@@ -54,31 +60,31 @@
 .showRight {
     @extend .show;
     transform: translateX(0%);
-    transition-delay: 4s
+    transition-delay: 4s;
 }
 
 .hiddenUp {
     @extend .hidden;
     transform: translateY(-100%);
-    transition-delay: 1s;
+    transition-delay: 1.5s;
 }
 
 .showUp {
     @extend .show;
     transform: translateY(0%);
-    transition-delay: 1s;
+    transition-delay: 1.5s;
 }
 
 .showDown {
     @extend .show;
     transform: translateY(0%);
-    transition-delay: 3s;
+    transition-delay: 2s;
 }
 
 .hiddenDown {
     @extend .hidden;
     transform: translateY(100%);
-    transition-delay: 3s;
+    transition-delay: 2s;
 }
 
 .hiddenParent * {

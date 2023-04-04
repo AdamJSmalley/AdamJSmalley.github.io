@@ -25,11 +25,43 @@ html {
 body {
 
     text-align: center;
-    font-family: 'Ubuntu Mono', sans-serif;
-    font-size: 1.3vmax;
-    font-family: 'Noto Sans', sans-serif;
+    //font-family: 'Ubuntu Mono', sans-serif;
+    font-size: 1.8vh;//1.3vmax;
+    font-family: 'Poppins', sans-serif;
     scroll-snap-type: y mandatory;
     overflow: scroll;
+    background-color: black;
+
+    #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //transition: opacity 1s ease-in-out;
+
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(359deg);
+            }
+        }
+
+        img {
+            width: 15vmin;
+            height: 15vmin;
+            animation: spin 1.5s ease-in-out infinite;
+
+        }
+    }
 
     h2 {
         font-size: 2.6max;

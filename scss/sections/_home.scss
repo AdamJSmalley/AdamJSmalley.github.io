@@ -3,21 +3,37 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-image: url('/images/introBackgrond2.png');
+    background-image: url('/images/background.webp');
     background-position: top;
     background-repeat: no-repeat;
     background-origin: border-box;
-    background-size: 100vmin;
+    background-size: 90vmin;
     color: white;
     overflow: hidden;
     background-color: black;
     background-origin: border-box;
-    //font-family: 'Noto Sans', sans-serif;
+    font-family: 'Turret Road', sans-serif;
+    box-sizing: border-box;
+
+    @media (orientation:landscape) {
+        padding-right: 3.7vmax;
+    }
 
     @media (orientation: portrait) {
         //height: 200vh;
         flex-direction: column;
-        background-position: center;
+        background-position: 50% 52%;
+        padding-bottom: 5vmax;
+        background-size: 53vmin !important;
+
+        h1 {
+            font-size: 7vmax !important;
+            margin-bottom: initial !important;
+        }
+
+        #poem {
+            font-size: 2.1vmax !important;
+        }
     }
 
     >div {
@@ -29,8 +45,10 @@
         display: block;
         margin-bottom: 3vmax;
         font-weight: 500;
-        font-family: 'Special Elite', sans-serif;
+        font-family: 'Scope One', sans-serif; //'Special Elite'
         animation: pop-in 1s ease-out forwards;
+        animation-delay: 2.5s;
+        opacity: 0;
     }
 
     #poem {
@@ -39,6 +57,7 @@
         line-height: 2em;
         opacity: 0;
         animation: fade-in 1s ease-out 1.5s forwards;
+        animation-delay: 4s;
     }
 
     /*     #intro {
@@ -49,7 +68,7 @@
         "title middle cube"
         "poem middle cube";
     grid-template-columns: 1fr 2fr 1fr;
-    background-image: url('/images/introBackgrond2.png');
+    background-image: url('/images/introBackgrond2.webp');
     background-position: top;
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -97,17 +116,18 @@
         //grid-area: cube;
         opacity: 0;
         animation: fade-in 1s ease-in 3s forwards;
+        animation-delay: 5.7s;
 
         #me {
             opacity: 0;
             padding-bottom: 6vmax;
             /*                 width: $meHeight;
             height: $meHeight; */
-            width: 20vmin;
+            width: 20vh;
 
             @media (orientation: portrait) {
 
-                width: 70vmin;
+                width: 26vh;
             }
         }
 

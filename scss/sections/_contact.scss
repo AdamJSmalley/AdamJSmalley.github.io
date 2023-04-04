@@ -3,6 +3,7 @@
 
     display: flex;
     flex-direction: column;
+    font-family: 'Turret Road', cursive;
 
     #main {
         display: flex;
@@ -12,7 +13,7 @@
         flex-grow: 1;
 
         #text {
-            font-size: 8vmin;
+            font-size: 10vmin;
 
             h2 {
                 display: block;
@@ -23,7 +24,7 @@
             }
         }
 
-        #form {
+        /* #form {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -34,6 +35,7 @@
             padding: 10%;
             box-sizing: border-box;
             border-bottom-left-radius: 10vmin;
+            font-family: 'Poppins';
 
             input,
             textarea,
@@ -43,6 +45,7 @@
                 font-size: 2vmax;
                 padding: 1vmin;
                 border: none;
+                font-family: 'Noto Sans', sans-serif;
             }
 
             input,
@@ -67,12 +70,7 @@
             input::placeholder,
             textarea::placeholder {
                 color: inherit;
-                /* set the color of the placeholder text to be the same as the input text */
             }
-
-            /* input:focus {
-            outline: none;
-        } */
 
             input[type="submit"] {
                 width: 100%;
@@ -84,7 +82,7 @@
                 text-align: center;
                 cursor: pointer;
             }
-        }
+        } */
     }
 
     /* #main>* {
@@ -94,12 +92,13 @@
     #contactBtn {
         background-color: blue;
         color: white;
-        font-size: 5vmin;
+        font-size: 5vh;
         cursor: pointer;
         border: none;
         padding: 3vmin;
         flex-grow: 0;
         border-radius: 8vmin;
+        font-family: 'Turret Road', cursive;
 
     }
 
@@ -151,6 +150,7 @@
                     font-size: 2vmax;
                     padding: 1vmin;
                     border: none;
+                    font-family: 'Noto Sans', sans-serif;
                 }
 
                 input,
@@ -182,13 +182,6 @@
                     box-shadow: var(--grey) 0.6vmin 0.6vmin 0.5vmin;
                     color: var(--grey);
                 }
-
-                //q: what does this do? box-shadow: blue 0px 0px 10px;
-                //a: it adds a blue shadow to the button when you hover over it
-                //q: what does the 0px 0px 10px mean?
-                //a: it means the shadow is 10px away from the button
-                //q: what does 0px 0px mean?
-
 
                 input::placeholder,
                 textarea::placeholder {
@@ -224,12 +217,30 @@
         width: 100%;
         border-top: var(--border);
 
+        @media (orientation: portrait) {
+            flex-direction: column;
+            justify-content: space-evenly !important;
+
+            >* {
+                padding: 5% !important;
+                width: 100%;
+            }
+
+            #social {
+                border-top: var(--border);
+                border-bottom: var(--border);
+            }
+        }
+
         #social {
             display: flex;
             justify-content: space-around;
-            border-left: var(--border);
-            border-right: var(--border);
-            font-size: 3vmax;
+            font-size: 4.5vh;
+
+            @media (orientation: landscape) {
+                border-left: var(--border);
+                border-right: var(--border);
+            }
 
             a {
                 color: black;
@@ -240,46 +251,17 @@
             }
         }
 
-        //box-sizing: border-box;
-        //background-color: blue;
         >* {
             flex-grow: 1;
             padding: 1%;
             box-sizing: border-box;
         }
-
-        /*         #social {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-
-            a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 10vmin;
-                height: 10vmin;
-                border-radius: 50%;
-                background-color: white;
-                color: blue;
-                font-size: 5vmin;
-                cursor: pointer;
-            } 
-        }
-
-        #marquee {
-            margin-top: 5vmin;
-            margin-bottom: 3vmin;
-            font-size: 2.5vmax;
-        }*/
     }
 
     #marquee {
         margin-top: 8vmin;
         margin-bottom: 4vmin;
-        font-size: 2.5vmax;
+        font-size: 4vh; // 2.5vmax;
     }
 
 }
