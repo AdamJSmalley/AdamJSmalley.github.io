@@ -5,12 +5,11 @@
     font-family: 'IBM Plex Serif', sans-serif;
 
     @media (orientation: portrait) {
-        //height: 200vh;
         flex-direction: column-reverse;
     }
 
     .explanation {
-        padding: 4vmin; //10vmin;
+        padding: 4vmin;
         flex-basis: 33%;
         display: flex;
         flex-direction: column;
@@ -21,7 +20,6 @@
             display: flex;
             flex-direction: column;
             gap: 3vmin;
-            //background-color: rgb(116, 223, 255);
             border-radius: 3vh;
             max-height: 80vmin;
             align-items: center;
@@ -46,7 +44,7 @@
             }
 
 
-
+            //buttons
             a {
                 display: inline-block;
                 padding: 1vmin 2vmin;
@@ -75,7 +73,6 @@
     }
 
     .graphic {
-        //background-image: url("../images/monitor.webp");
         background-position: right;
         background-size: contain;
         background-repeat: no-repeat;
@@ -107,11 +104,6 @@
         background-image: url("../images/devices/phone.webp");
 
         iframe {
-            /* top: 10%;
-            width: 74.6%;
-            left: 10%;
-            height: 47.8%; */
-
             top: -49.6%;
             width: 106%;
             left: -3.2%;
@@ -120,6 +112,7 @@
             border-radius: 10vmin;
         }
 
+        //hide scroll bar
         iframe::-webkit-scrollbar {
             display: none;
         }

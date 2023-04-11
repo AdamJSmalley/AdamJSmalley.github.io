@@ -23,71 +23,7 @@
                 color: blue;
             }
         }
-
-        /* #form {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            //width: 100%;
-            height: 100%;
-            background-color: blue;
-            padding: 10%;
-            box-sizing: border-box;
-            border-bottom-left-radius: 10vmin;
-            font-family: 'Poppins';
-
-            input,
-            textarea,
-            button {
-                text-align: center;
-                border-radius: 2vmin;
-                font-size: 2vmax;
-                padding: 1vmin;
-                border: none;
-                font-family: 'Noto Sans', sans-serif;
-            }
-
-            input,
-            textarea {
-                width: 100%;
-                color: white;
-                background-color: rgb(31, 194, 244);
-            }
-
-            input:focus,
-            textarea:focus {
-                background-color: white;
-                color: black;
-                outline: none;
-                border: none;
-            }
-
-            button {
-                background-color: white;
-            }
-
-            input::placeholder,
-            textarea::placeholder {
-                color: inherit;
-            }
-
-            input[type="submit"] {
-                width: 100%;
-                height: 100%;
-                border: none;
-                background-color: blue;
-                color: white;
-                font-size: 20vmin;
-                text-align: center;
-                cursor: pointer;
-            }
-        } */
     }
-
-    /* #main>* {
-        flex: 1;
-    } */
 
     #contactBtn {
         background-color: blue;
@@ -101,6 +37,65 @@
         font-family: 'Turret Road', cursive;
 
     }
+
+    --border: 2px solid rgb(60, 60, 60);
+
+    #footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        border-top: var(--border);
+
+        @media (orientation: portrait) {
+            flex-direction: column;
+            justify-content: space-evenly !important;
+
+            >* {
+                padding: 5% !important;
+                width: 100%;
+            }
+
+            #social {
+                border-top: var(--border);
+                border-bottom: var(--border);
+            }
+        }
+
+        #social {
+            display: flex;
+            justify-content: space-around;
+            font-size: 4.5vh;
+
+            @media (orientation: landscape) {
+                border-left: var(--border);
+                border-right: var(--border);
+            }
+
+            a {
+                color: black;
+            }
+
+            a:hover {
+                color: var(--grey);
+            }
+        }
+
+        >* {
+            flex-grow: 1;
+            padding: 1%;
+            box-sizing: border-box;
+        }
+    }
+
+    #marquee {
+        margin-top: 8vmin;
+        margin-bottom: 4vmin;
+        font-size: 4vh;
+    }
+
+    /* Contact form popup */
 
     #wrapper {
         position: fixed;
@@ -190,10 +185,6 @@
                 }
             }
 
-            /* input:focus {
-            outline: none;
-        } */
-
             input[type="submit"] {
                 width: 100%;
                 height: 100%;
@@ -206,62 +197,4 @@
             }
         }
     }
-
-    --border: 2px solid rgb(60, 60, 60);
-
-    #footer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        border-top: var(--border);
-
-        @media (orientation: portrait) {
-            flex-direction: column;
-            justify-content: space-evenly !important;
-
-            >* {
-                padding: 5% !important;
-                width: 100%;
-            }
-
-            #social {
-                border-top: var(--border);
-                border-bottom: var(--border);
-            }
-        }
-
-        #social {
-            display: flex;
-            justify-content: space-around;
-            font-size: 4.5vh;
-
-            @media (orientation: landscape) {
-                border-left: var(--border);
-                border-right: var(--border);
-            }
-
-            a {
-                color: black;
-            }
-
-            a:hover {
-                color: var(--grey);
-            }
-        }
-
-        >* {
-            flex-grow: 1;
-            padding: 1%;
-            box-sizing: border-box;
-        }
-    }
-
-    #marquee {
-        margin-top: 8vmin;
-        margin-bottom: 4vmin;
-        font-size: 4vh; // 2.5vmax;
-    }
-
 }

@@ -20,7 +20,6 @@
     }
 
     @media (orientation: portrait) {
-        //height: 200vh;
         flex-direction: column;
         background-position: 50% 52%;
         padding-bottom: 5vmax;
@@ -45,7 +44,7 @@
         display: block;
         margin-bottom: 3vmax;
         font-weight: 500;
-        font-family: 'Scope One', sans-serif; //'Special Elite'
+        font-family: 'Scope One', sans-serif;
         animation: pop-in 1s ease-out forwards;
         animation-delay: 2.5s;
         opacity: 0;
@@ -60,60 +59,7 @@
         animation-delay: 4s;
     }
 
-    /*     #intro {
-    align-items: center;
-    display: grid;
-    row-gap: 7vmin;
-    grid-template-areas:
-        "title middle cube"
-        "poem middle cube";
-    grid-template-columns: 1fr 2fr 1fr;
-    background-image: url('/images/introBackgrond2.webp');
-    background-position: top;
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    background-size: 100vmin;
-    color: white;
-    overflow: hidden;
-    background-color: black;
-    background-origin: border-box;
-    /* top: 0;
-    position: absolute;
-    left: 0;
-
-    @media (orientation: portrait) {
-        //height: 200vh;
-        grid-template-areas:
-            "title"
-            "poem"
-            "cube";
-        grid-template-rows: 1fr 1fr 1.5fr;
-    }
-
-
-    h1 {
-        font-size: 6vmax;
-        display: block;
-        //padding-right: 4vw;
-        //padding-left: 4vw; //9vw
-        grid-area: title;
-        align-self: end;
-        font-weight: 500;
-        font-family: 'Shadows Into Light', sans-serif;
-        animation: pop-in 1s ease-out forwards;
-    }
-
-    #poem {
-        grid-area: poem;
-        align-self: start;
-        font-size: 1.3vmax; //7vh
-        line-height: 2em;
-        opacity: 0;
-        animation: fade-in 1s ease-out 1.5s forwards;
-    }
-*/
     .cube-container {
-        //grid-area: cube;
         opacity: 0;
         animation: fade-in 1s ease-in 3s forwards;
         animation-delay: 5.7s;
@@ -121,8 +67,6 @@
         #me {
             opacity: 0;
             padding-bottom: 6vmax;
-            /*                 width: $meHeight;
-            height: $meHeight; */
             width: 20vh;
 
             @media (orientation: portrait) {
@@ -132,14 +76,11 @@
         }
 
         #bio {
-            //opacity: 0;
             width: 70vw;
             height: 30vh;
             font-size: 2vmax;
             line-height: 3vmax;
-            //color: $darkText;
             color: black;
-            //text-align: justify;
         }
     }
 

@@ -1,5 +1,11 @@
 $fontSize: 2.5vh; //1.3vmax;
 $bgOpacity: 1;
+//convert the above to vanilla css
+
+:root {
+    --fontSize: 2.5vh;
+  }
+
 
 .container {
     display: flex;
@@ -15,12 +21,16 @@ $bgOpacity: 1;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    // fix for IOS as it doesn't support background-attachment: fixed
+    @supports (-webkit-touch-callout: none) {
+        background-attachment: initial;
+      }      
     transition: background-image 1s ease-in-out;
     transition-delay: 1s;
 
     .textBox {
         border-radius: 50%;
-        font-size: calc($fontSize/1.7);
+        font-size: calc(var(--fontSize)/1.7);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -41,18 +51,18 @@ $bgOpacity: 1;
         }
 
         h2 {
-            font-size: $fontSize * 2;//2.5
+            font-size: calc(var(--fontSize) * 2);
             font-family: 'Noto Sans', sans-serif;
         }
 
         h3 {
-            font-size: $fontSize * 1;//1.6
+            font-size: caLc(var(--fontSize) * 1);
             font-style: italic;
             font-family: 'Turret Road', cursive;
         }
 
         small {
-            font-size: $fontSize * 0.8;
+            font-size: calc(var(--fontSize) * 0.8);
             font-style: italic;
             padding-bottom: 3vmin;
             font-family: 'Turret Road', cursive;
@@ -65,10 +75,9 @@ $bgOpacity: 1;
         }
 
         ul {
-            //text-align: initial;
             list-style: none;
             font-style: italic;
-            font-size: $fontSize * 0.5;
+            font-size: calc(var(--fontSize) * 0.5);
         }
     }
 }
@@ -90,8 +99,8 @@ $bgOpacity: 1;
     }
 }
 
+//add background to gradient and blur to text box
 .container::before {
-    //
     content: '';
     position: relative;
     top: 0;
@@ -103,9 +112,6 @@ $bgOpacity: 1;
     -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5) 40%, transparent 50%);
     background: rgba(0, 0, 0, 0.8);
 }
-
-
-//}
 
 #timeline::-webkit-scrollbar {
     display: none;

@@ -1,10 +1,10 @@
 import { animationFinished } from "./stopScroll.js";
 
-const spintl = gsap.timeline({ repeat: -1 });
+const spintl = gsap.timeline({ repeat: -1 }); //create a timeline to run animate the spinning of the cube
 var imgNum = 2; // Variable to keep track of the current index in the images array
-const box = document.querySelector('.cube');
-const faces = new Map();
+const box = document.querySelector('.cube'); //get the cube element
 
+const faces = new Map(); //create a map to store the faces of the cube
 box.querySelectorAll('*').forEach(element => {
     faces.set(element.id, element);
 });
@@ -27,8 +27,9 @@ function updateface(faceId) {
     imgNum = (imgNum + 1) % cubeContent.length; // Increment index and wrap around if necessary
 }
 
+//spinning animation
 export function spin() {
-    //set up the images on the first 2 fas cube.faces
+    //set up the images on the first 2 cube faces
     faces.get("front").innerHTML = cubeContent[0];
     faces.get("left").innerHTML = cubeContent[1];
 
@@ -47,6 +48,7 @@ export function spin() {
     spintl.play();
 };
 
+//zoom animation
 export function zoom() {
 
     //lazy load image of myself
@@ -56,12 +58,15 @@ export function zoom() {
     //set background colour of body to white
     document.body.style.backgroundColor = 'white';
     
+    //stop the spinning animation
     spintl.kill();
 
     const growTl = gsap.timeline({ onComplete: animationFinished });
 
+    //common parameters for the expand animation
     const expandParam = { duration: 1, ease: "expo.out" };
 
+    //calculate the new size of the cube and the offset of the faces
     const size = 80;
     const sizeStr = size + 'vmin';
     const offset = (size / 2) + 'vmin';
