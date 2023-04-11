@@ -14,7 +14,7 @@ window.onload = () => {
 }
 
 //block scrolling and run the cube animation
-startAndListen();
+//startAndListen();
 
 //copy skills text
 const skillsList = document.querySelector('.skills');
