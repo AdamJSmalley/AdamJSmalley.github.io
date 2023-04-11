@@ -1,5 +1,3 @@
-//import { bio } from "./content.js";
-
 export default function animatePoem(bioText) {
     var i = 0;
     var speed = 50;

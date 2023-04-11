@@ -1,9 +1,10 @@
 const elements = document.getElementsByClassName('container');
 
+//options for the intersection observer
 const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.01, //0.01
+    threshold: 0.01,
 };
 
 const observerFactory = (selector) => {
@@ -12,6 +13,7 @@ const observerFactory = (selector) => {
         entries.forEach(entry => {
             const element = entry.target;
             if (entry.isIntersecting) {
+                //add the show class to the element to run the loading animation
                 element.classList.add(`show${selector}`);
                 element.classList.remove(`hidden${selector}`);
 
@@ -38,14 +40,15 @@ const observerFactory = (selector) => {
                //// }
 
             } else {
+                //add the hidden class to the element so the loading animation runs when the user scrolls back up
                 element.classList.add(`hidden${selector}`);
                 element.classList.remove(`show${selector}`);
             }
         });
     }, options);
-    //(selector == 'Parent') ? options : undefined
 }
 
+//observe all elements with the given selector
 export default function observeElements(selector) {
     const elements = document.querySelectorAll(`.hidden${selector}`);
 
