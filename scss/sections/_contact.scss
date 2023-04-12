@@ -1,9 +1,14 @@
+//global css variable
+:root {
+    --grey: #949494;
+}
+
 #contact {
-    --grey: rgb(77, 77, 77);
 
     display: flex;
     flex-direction: column;
     font-family: 'Turret Road', cursive;
+    z-index: 0;
 
     #main {
         display: flex;
@@ -97,104 +102,113 @@
 
     /* Contact form popup */
 
-    #wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
+    
+}
 
-        #body {
-            box-sizing: border-box;
-            width: 80%;
-            height: 80%;
-            background-color: white;
+#wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    #body {
+        position: fixed;
+        bottom: 10vh;
+        left: 10vw;
+        box-sizing: border-box;
+        width: 80vw;
+        height: 80vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        border: 6px solid black;
+
+        #closeBtn {
+            font-size: 6vmin;
+            cursor: pointer;
+            border-top-left-radius: 10vmin;
+            align-self: flex-end;
+            margin: 4vmin;
+            margin-bottom: 0;
+            color: var(--grey);
+        }
+
+        #form {
             display: flex;
             flex-direction: column;
-            justify-content: start;
+            justify-content: space-evenly;
             align-items: center;
-            border: 6px solid black;
+            flex-grow: 1;
 
-            #closeBtn {
-                font-size: 6vmin;
-                cursor: pointer;
-                border-top-left-radius: 10vmin;
-                align-self: flex-end;
-                margin: 4vmin;
-                margin-bottom: 0;
+            input,
+            textarea,
+            button {
+                text-align: center;
+                border-radius: 2vmin;
+                font-size: 2vmax;
+                padding: 1vmin;
+                border: none;
+                font-family: 'Noto Sans', sans-serif;
+            }
+
+            input,
+            textarea {
+                width: 50vw;
+                border: 1px solid black;
+            }
+
+            input:focus,
+            textarea:focus {
+                background-color: var(--grey);
+                color: white;
+                outline: none;
+                border: none;
+            }
+
+            button {
+                background-color: black;
+                color: white;
+            }
+
+            button:hover {
+                background-color: white;
+                box-shadow: #949494 0.6vmin 0.6vmin 1vmin;
+                color: black;
+            }
+
+            button:active {
+                background-color: white;
+                border: 1px solid var(--grey);
+                box-shadow: var(--grey) 0.6vmin 0.6vmin 0.5vmin;
                 color: var(--grey);
             }
 
-            #form {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                align-items: center;
-                flex-grow: 1;
-
-                input,
-                textarea,
-                button {
-                    text-align: center;
-                    border-radius: 2vmin;
-                    font-size: 2vmax;
-                    padding: 1vmin;
-                    border: none;
-                    font-family: 'Noto Sans', sans-serif;
-                }
-
-                input,
-                textarea {
-                    width: 50vw;
-                    border: 1px solid black;
-                }
-
-                input:focus,
-                textarea:focus {
-                    background-color: var(--grey);
-                    color: white;
-                    outline: none;
-                    border: none;
-                }
-
-                button {
-                    background-color: black;
-                }
-
-                button:hover {
-                    background-color: var(--grey);
-                    box-shadow: #949494 0.6vmin 0.6vmin 1vmin;
-                }
-
-                button:active {
-                    background-color: white;
-                    border: 1px solid var(--grey);
-                    box-shadow: var(--grey) 0.6vmin 0.6vmin 0.5vmin;
-                    color: var(--grey);
-                }
-
-                input::placeholder,
-                textarea::placeholder {
-                    color: inherit;
-                    /* set the color of the placeholder text to be the same as the input text */
-                }
-            }
-
-            input[type="submit"] {
-                width: 100%;
-                height: 100%;
-                border: none;
-                background-color: blue;
-                color: white;
-                font-size: 20vmin;
-                text-align: center;
-                cursor: pointer;
+            input::placeholder,
+            textarea::placeholder {
+                color: inherit;
+                /* set the color of the placeholder text to be the same as the input text */
             }
         }
+
+        input[type="submit"] {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: blue;
+            color: white;
+            font-size: 20vmin;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        //Q:how do i tag an issue as open on a commit?
+        //A:
     }
 }
