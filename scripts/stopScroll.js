@@ -20,40 +20,30 @@ const bio = document.querySelector("#bio");
 const bioText = bio.textContent;
 bio.innerHTML = "";
 
-//prevent scrolling and run zoom animation
-function preventDefault(e) {
-    e.preventDefault();
-
-    if (first) {
-        first = false;
-        zoom(); //start zoom animation.
-    }
-}
-
-//detect if the user is using a key to scroll
-function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
-    }
-}
-
 //start cube animation and listen for scrolling
 export function startAndListen() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    window.addEventListener('wheel', removeListeners, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', removeListeners, wheelOpt); // mobile
+    window.addEventListener('keydown', () => {if (keys[e.keyCode]) removeListeners()}, false);
 
     //start cube animation
     spin();
 }
 
+//a function to remove event listeners
+function removeListeners() {
+    zoom();
+    window.removeEventListener('wheel', removeListeners, wheelOpt);
+    window.removeEventListener('touchmove', removeListeners, wheelOpt);
+    window.removeEventListener('keydown', removeListeners, wheelOpt);
+}
+
 //remove event listeners and run bio animation
 export function animationFinished() {
-    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    window.removeEventListener('touchmove', preventDefault, wheelOpt);
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+    //get body
+    const body = document.querySelector("body");
+    //change css to make overflow visible
+    body.style.overflow = "visible";
+    //start bio animation
     oneByOne(bioText);
 }

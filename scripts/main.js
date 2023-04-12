@@ -11,10 +11,14 @@ window.onload = () => {
     }, 1000);
 
     document.getElementById("page").classList.add("show");
+    
+    //scroll to intro
+    const intro = document.getElementById("intro");
+    intro.scrollIntoView({ behavior: "auto" });
 }
 
 //block scrolling and run the cube animation
-//startAndListen();
+startAndListen();
 
 //copy skills text
 const skillsList = document.querySelector('.skills');
