@@ -1,5 +1,9 @@
 import { startAndListen } from "./stopScroll.js";
 import observeElements from "./animate.js";
+import * as contact from "./contact.js";
+
+//add event listeners
+contact.addEventListeners();
 
 //Show loading animation until page is loaded
 window.onload = () => {

@@ -88,36 +88,37 @@
 }
 
 #website {
-.graphic {
-    background-image: url("../images/devices/monitor.webp");
-
-    iframe {
-        position: relative;
-        top: 18.8%;
-        width: 74.6%;
-        left: 0.4%;
-        height: 47.8%;
-        border: none;
-    }
-
-    @media (orientation: portrait) {
-        background-image: url("../images/devices/phone.webp");
+    .graphic {
+        background-image: url("../images/devices/monitor.webp");
 
         iframe {
-            top: -49.6%;
-            width: 106%;
-            left: -3.2%;
-            height: 195.5%;
+            position: relative;
+            top: -17.4%;
+            width: 187.6%;
+            left: -43.4%;
+            height: 120%;
             transform: scale(0.4);
-            border-radius: 10vmin;
+            border: none;
+            border-radius: 0.8vmin;
         }
 
-        //hide scroll bar
-        iframe::-webkit-scrollbar {
-            display: none;
-        }
+        @media (orientation: portrait) {
+            background-image: url("../images/devices/phone.webp");
 
+            iframe {
+                top: -49.6%;
+                width: 106%;
+                left: -3.2%;
+                height: 195.5%;
+                border-radius: 10vmin;
+            }
+
+            //hide scroll bar
+            iframe::-webkit-scrollbar {
+                display: none;
+            }
+
+        }
     }
-}
 
 }

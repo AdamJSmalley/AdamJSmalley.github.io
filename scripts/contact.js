@@ -21,9 +21,14 @@ function sendContact() {
     xhr.send(dataString);
 }
 
+function addEventListeners() {
 //show popup when contactBtn is clicked
 const contactBtn = document.querySelector('#contactBtn');
 const popup = document.querySelector('.popup');
 const closeBtn = document.querySelector('#closeBtn');
 contactBtn.addEventListener('click', () => popup.classList.add('showPopup'));
 closeBtn.addEventListener('click', () => popup.classList.remove('showPopup'));
+}
+
+//exoport all functions
+export { sendContact, addEventListeners };
