@@ -10,9 +10,6 @@
 @use 'sections/contact';
 
 
-$darkText: 'black';
-$meHeight: '15vmin';
-
 * {
     margin: 0;
     padding: 0;
@@ -25,8 +22,7 @@ html {
 body {
 
     text-align: center;
-    //font-family: 'Ubuntu Mono', sans-serif;
-    font-size: 1.8vh;//1.3vmax;
+    font-size: 1.8vh;
     font-family: 'Poppins', sans-serif;
     scroll-snap-type: y mandatory;
     overflow: scroll;
@@ -68,9 +64,7 @@ body {
     }
 
     section {
-        //width: 100vw;
         height: 100vh;
-        //background-image: url('../images/background.avif');
         background-size: contain;
         background-repeat: no-repeat;
         background-color: white;
