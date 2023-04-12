@@ -7,7 +7,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-origin: border-box;
-    background-size: 90vmin;
+    background-size: 70vmin;
     color: white;
     overflow: hidden;
     background-color: black;
@@ -23,15 +23,20 @@
         flex-direction: column;
         background-position: 50% 52%;
         padding-bottom: 5vmax;
-        background-size: 53vmin !important;
+        //background-size: 53vmin !important;
+        background-image: none !important;
 
         h1 {
             font-size: 7vmax !important;
-            margin-bottom: initial !important;
+            margin-bottom: 5vmax !important;
         }
 
         #poem {
             font-size: 2.1vmax !important;
+        }
+
+    .cube-container {
+            flex-grow: 1;
         }
     }
 
@@ -45,25 +50,20 @@
         margin-bottom: 3vmax;
         font-weight: 500;
         font-family: 'Scope One', sans-serif;
-        animation: pop-in 1s ease-out forwards;
-        animation-delay: 1s;
-        opacity: 0;
+        /* animation: pop-in 1s ease-out forwards;
+        animation-delay: 3.5s; */
     }
 
     #poem {
         margin-top: 0;
         font-size: 1.3vmax;
         line-height: 2em;
-        opacity: 0;
-        animation: fade-in 1s ease-out 1.5s forwards;
-        animation-delay: 2s;
+        //opacity: 0;
+        /* animation: fade-in 1s ease-out 1.5s forwards;
+        animation-delay: 3.5s; */
     }
 
     .cube-container {
-        opacity: 0;
-        animation: fade-in 1s ease-in 2s forwards;
-        animation-delay: 3.5s;
-
         #me {
             opacity: 0;
             padding-bottom: 6vmax;
@@ -85,3 +85,4 @@
     }
 
 }
+

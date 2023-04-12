@@ -40,6 +40,12 @@ function removeListeners() {
 
 //remove event listeners and run bio animation
 export function animationFinished() {
+    //make #website load
+    const website = document.querySelector("iframe");
+    //set lazy loading to eager
+    //how do i change the "loadinh" attribute to "eager"?
+    website.loading = "eager";
+
     //get body
     const body = document.querySelector("body");
     //change css to make overflow visible

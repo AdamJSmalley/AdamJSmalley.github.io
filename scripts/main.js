@@ -5,6 +5,10 @@ import * as contact from "./contact.js";
 //add event listeners
 contact.addEventListeners();
 
+    //scroll to intro
+    const intro = document.getElementById("intro");
+intro.scrollIntoView({ behavior: "smooth" });
+
 //Show loading animation until page is loaded
 window.onload = () => {
     const loader = document.getElementById("loader");
@@ -15,10 +19,7 @@ window.onload = () => {
     }, 1000);
 
     document.getElementById("page").classList.add("show");
-    
-    //scroll to intro
-    const intro = document.getElementById("intro");
-    intro.scrollIntoView({ behavior: "auto" });
+
 }
 
 //block scrolling and run the cube animation
