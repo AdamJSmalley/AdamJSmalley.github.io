@@ -1,19 +1,35 @@
-//function to send the data in name, email, and message fields via ajax to swanleyhypnotherist.co.uk/adam/contact.php when contactBtn is clicked
+const fields = {
+    name: { ref: document.getElementById("name"), regex: /^[A-Za-z .'-]+$/, ok: false },
+    email: { ref: document.getElementById("email"), regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, ok: false },
+    message: { ref: document.getElementById("message"), regex: /^(?=(?:\s*\S){20,1000}\s*$).*$/, ok: false }
+}
+
 function sendContact() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
+    console.log("sendContact() called");
+
+    for (const key in fields) {
+        const field = fields[key];
+        if (!field.ok) {
+            const ref = field.ref;
+            ref.classList.add("error");
+            ref.focus();
+            return false;
+        }
+    }
+
     var container = document.getElementById("form");
-    var dataString = "name=" + name + "&email=" + email + "&message=" + message;
+    var dataString = "name=" + fields.name.ref.value + "&email=" + fields.email.ref.value + "&message=" + fields.message.ref.value;
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "contact.php", true);
+    xhr.open("POST", "https://swanleyhypnotherapist.co.uk/adam/mail.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    console.log("name=" + fields.name.ref.value + "&email=" + fields.email.ref.value + "&message=" + fields.message.ref.value);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 container.innerHTML = xhr.responseText;
             } else {
-                container.textContent = "Error please try again";
+                container.innerHTML = "There was an error sending your message, please email <a src='mailto:hello@adam-smalley.com'>hello&#64;adam-smalley.com</a>.";
                 console.error("Error: " + xhr.status);
             }
         }
@@ -22,13 +38,27 @@ function sendContact() {
 }
 
 function addEventListeners() {
-//show popup when contactBtn is clicked
-const contactBtn = document.querySelector('#contactBtn');
-const popup = document.querySelector('.popup');
-const closeBtn = document.querySelector('#closeBtn');
-contactBtn.addEventListener('click', () => popup.classList.add('showPopup'));
-closeBtn.addEventListener('click', () => popup.classList.remove('showPopup'));
+    const contactBtn = document.querySelector('#contactBtn');
+    const popup = document.querySelector('.popup');
+    const closeBtn = document.querySelector('#closeBtn');
+    contactBtn.addEventListener('click', () => popup.classList.add('showPopup'));
+    closeBtn.addEventListener('click', () => popup.classList.remove('showPopup'));
+
+    for (const key in fields) {
+        const field = fields[key];
+        const ref = field.ref;
+        ref.addEventListener('change', () => {
+            if (ref.value == "" || !field.regex.test(ref.value)) {
+                //add a class to ref
+                ref.classList.add("error");
+                field.ok = false;
+            } else {
+                ref.classList.remove("error");
+                field.ok = true;
+            }
+
+        });
+    };
 }
 
-//exoport all functions
 export { sendContact, addEventListeners };

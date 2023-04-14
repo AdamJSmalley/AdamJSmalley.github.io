@@ -115,6 +115,8 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
+    font-family: 'Turret Road', cursive;
+    font-size: 1.75vmax;
 
     #body {
         position: fixed;
@@ -162,6 +164,12 @@
             textarea {
                 width: 50vw;
                 border: 1px solid black;
+            }
+
+            .error {
+                background-color: #Fea7a7 !important;
+                border: 1px solid #Fc3b3b !important;
+                color: #4a0202 !important;
             }
 
             input:focus,

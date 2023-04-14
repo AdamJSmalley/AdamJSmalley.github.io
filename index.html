@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/cc41768a59.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=IBM Plex Serif|Poppins|Scope One|Noto Sans|Turret Road">
+        href="https://fonts.googleapis.com/css?family=IBM Plex Serif|Poppins|Scope One|Noto Sans|Turret Road|Anonymous Pro">
 
     <script defer type="module" src="scripts/main.js"></script>
     <link defer rel="stylesheet" href="main.css" />
@@ -45,14 +45,18 @@
                     <div class="cube-face" id="top"></div>
                     <div class="cube-face" id="bottom">
                         <img id='me' data-src="images/me.webp" />
-                        <p id="bio">I have been writing code since the age of 12 and I have developed two websites
+                        <p id="bioContainer">
+                            <span id="bio">
+                                I have been writing code since the age of 12 and I have developed two websites
                             (check
                             the projects section for specifics). Before that, I spent over two years as an ERP software
                             consultant. I recently completed a software engineering internship and am eager to continue
                             my
                             career as a developer, which is my true passion. I have completed many personal projects in
                             my
-                            free time.</p>
+                            free time.
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -77,8 +81,8 @@
             </div>
         </section>
 
-        <section data-lazy-id="website" class="portfolio" id="website">
-            <div data-lazy-id="website" class="explanation hiddenLeft">
+        <section class="portfolio" id="website">
+            <div class="explanation hiddenLeft">
                 <div class="box">
                     <h2>Swanley Hypnotherapist</h2>
                     <P>I created a website for my Mother's hynotherapy business. I created the site in wordpress along
@@ -216,7 +220,7 @@
             </div>
         </section>
 
-        <section data-org="wgsb" id="wgsb" class="container hiddenParent">
+        <section data-org="wgsb" class="container hiddenParent">
             <div class="textBox">
                 <img loading="lazy" src="/images/timeline/logo/wgsb.webp" />
                 <h2>Wilmington Grammar School for Boys</h2>
@@ -288,10 +292,10 @@
             <div id="body">
                 <i id="closeBtn" class="fa fa-times" aria-hidden="true"></i>
                 <div id="form">
-                    <input type="text" name="name" placeholder="Name" />
-                    <input type="email" name="email" placeholder="Email Address" />
-                    <textarea name="message" rows="5" placeholder="Message"></textarea>
-                    <button id="contactBtn" type="button">Send</button>
+                    <input type="text" id="name" placeholder="Name" />
+                    <input type="email" id="email" placeholder="Email Address" />
+                    <textarea id="message" rows="5" placeholder="Message"></textarea>
+                    <button id="submit" type="button">Send</button>
                 </div>
             </div>
         </div>

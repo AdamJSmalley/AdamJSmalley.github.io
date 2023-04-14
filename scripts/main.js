@@ -1,29 +1,40 @@
 import { startAndListen } from "./stopScroll.js";
 import observeElements from "./animate.js";
-import * as contact from "./contact.js";
+import { spin, zoom } from "./cube.js";
+import { addEventListeners, sendContact} from "./contact.js";
 
 //add event listeners
-contact.addEventListeners();
+addEventListeners();
 
-    //scroll to intro
-    const intro = document.getElementById("intro");
+//scroll to intro
+const intro = document.getElementById("intro");
 intro.scrollIntoView({ behavior: "smooth" });
 
 //Show loading animation until page is loaded
 window.onload = () => {
     const loader = document.getElementById("loader");
-    loader.classList.add("hidden");
-    //delete loader
-    setTimeout(() => {
-        loader.remove();
-    }, 1000);
+    spin();
+    //loader.classList.add("hidden");
+    //create a gsap timeline that fades in poem, then fades out loader and makes the h1 fade in from the top
+    const tl = gsap.timeline();
+    tl.fromTo("#loader", { opacity: 1, filter: 'blur(20px)' }, { opacity: 0, filter: 'blur(0px)', duration: 0.5 })
+        .fromTo("#poem", { opacity: 0, filter: 'blur(20px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: Sine.easeOut }, '+=1')
+        .fromTo("h1", { opacity: 0, y: '-100%', filter: 'blur(20px)' }, { opacity: 1, y: '0%', filter: 'blur(0px)', duration: 0.5, ease: Sine.easeOut }, '>')
+        .fromTo(".cube-container", { opacity: 0, y: '-100%', filter: 'blur(20px)' }, { opacity: 1, y: '0%', filter: 'blur(0px)', duration: 1, ease: Bounce.easeOut }, '>')
+        .eventCallback("onComplete", startAndListen);
+
+    tl.play();
 
     document.getElementById("page").classList.add("show");
+
+    //add an onclick event listener to the contactBtn and closeBtn
+document.querySelector('#submit').addEventListener('click', sendContact);
+//document.querySelector('#closeBtn').addEventListener('click', sendContact);
 
 }
 
 //block scrolling and run the cube animation
-startAndListen();
+//startAndListen();
 
 //copy skills text
 const skillsList = document.querySelector('.skills');
