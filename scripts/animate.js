@@ -24,21 +24,6 @@ const observerFactory = (selector) => {
                     }
                 }
 
-                //if(selector == 'Left') {
-                    //how to check if element.dataset.lazy-id existance?
-                    //how to check if element.dataset.lazy-id is not null?
-                    
-
-                    //if('lazy-id' in element.dataset) {
-                        //Q:what is wrong with this code?
-                        //console.log(element);
-                        //let lazyId = element.dataset.lazy-id
-                        //const lazyElement = document.getElementById(lazyId);
-                        //lazyElement.loading = 'eager';
-                        //lazyElement.removeAttribute('data-lazy-id');
-                    //}
-               //// }
-
             } else {
                 //add the hidden class to the element so the loading animation runs when the user scrolls back up
                 element.classList.add(`hidden${selector}`);

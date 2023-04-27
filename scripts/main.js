@@ -14,7 +14,7 @@ intro.scrollIntoView({ behavior: "smooth" });
 window.onload = () => {
     const loader = document.getElementById("loader");
     spin();
-    //loader.classList.add("hidden");
+
     //create a gsap timeline that fades in poem, then fades out loader and makes the h1 fade in from the top
     const tl = gsap.timeline();
     tl.fromTo("#loader", { opacity: 1, filter: 'blur(20px)' }, { opacity: 0, filter: 'blur(0px)', duration: 0.5 })
@@ -29,12 +29,7 @@ window.onload = () => {
 
     //add an onclick event listener to the contactBtn and closeBtn
 document.querySelector('#submit').addEventListener('click', sendContact);
-//document.querySelector('#closeBtn').addEventListener('click', sendContact);
-
 }
-
-//block scrolling and run the cube animation
-//startAndListen();
 
 //copy skills text
 const skillsList = document.querySelector('.skills');

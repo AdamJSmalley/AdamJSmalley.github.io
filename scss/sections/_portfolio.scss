@@ -73,7 +73,7 @@
     }
 
     .graphic {
-        background-position: right;
+        background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
         min-width: 100vmin;
@@ -81,44 +81,57 @@
     }
 }
 
+.preview {
+    position: relative;
+    top: -49.6%;
+    width: 106.2%;
+    left: -3.2%;
+    height: 195.5%;
+    transform: scale(0.4);
+    border: none;
+    border-radius: 10vmin;
+}
+
 #app {
+    .graphic {
+        background-image: url("../images/devices/phoneNew.webp");
+
+        .preview {
+            border-radius: 15% / 30%;
+        }
+
+        @media (orientation: portrait) {
+            background-size: 118%;
+
+            .preview {
+                border-radius: 35%/7%;
+            }
+        }
+    }
+}
+
+#website {
+
+    @media (orientation: landscape) {
+        .graphic {
+            background-image: url("../images/devices/monitor.webp") !important;
+        }
+
+        .preview {
+            top: -17.4%;
+            width: 187.6%;
+            left: -43.4%;
+            height: 120%;
+            border-radius: 0.8vmin;
+        }
+    }
+
     .graphic {
         background-image: url("../images/devices/phone.webp");
     }
 }
 
-#website {
-    .graphic {
-        background-image: url("../images/devices/monitor.webp");
-
-        iframe {
-            position: relative;
-            top: -17.4%;
-            width: 187.6%;
-            left: -43.4%;
-            height: 120%;
-            transform: scale(0.4);
-            border: none;
-            border-radius: 0.8vmin;
-        }
-
-        @media (orientation: portrait) {
-            background-image: url("../images/devices/phone.webp");
-
-            iframe {
-                top: -49.6%;
-                width: 106%;
-                left: -3.2%;
-                height: 195.5%;
-                border-radius: 10vmin;
-            }
-
-            //hide scroll bar
-            iframe::-webkit-scrollbar {
-                display: none;
-            }
-
-        }
-    }
-
-}
+    //hide scroll bar
+    /* iframe::-webkit-scrollbar {
+        display: none;
+    } */

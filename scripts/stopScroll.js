@@ -4,6 +4,10 @@ import { addEventListeners } from "./contact.js";
 
 var keys = { 37: 1, 38: 1, 39: 1, 40: 1 }; //object with all keys that can be used to scroll
 var first = true; //is this the first time zoom has ran
+const website = document.querySelector("iframe");
+const video = document.querySelector("video");
+const body = document.querySelector("body");
+const slide1 = document.querySelector(".container");
 
 // modern Chrome requires { passive: false } when adding event
 var supportsPassive = false;
@@ -45,16 +49,31 @@ function removeListeners() {
 
 //remove event listeners and run bio animation
 export function animationFinished() {
-    //make #website load
-    const website = document.querySelector("iframe");
-    //set lazy loading to eager
-    //how do i change the "loadinh" attribute to "eager"?
+    //load assets
     website.loading = "eager";
+    slide1.style.backgroundImage = `url('.//images/timeline/background/${slide1.dataset.org}.webp')`
+    video.poster = `./videos/${video.dataset.src}Poster.webp`;
+    video.preload = "auto";
 
-    //get body
-    const body = document.querySelector("body");
+    //add event listener to play and pause video
+    var videoShowing = false;
+
+    video.parentElement.addEventListener('transitionend', (event) => {
+        if (event.propertyName === 'opacity') {
+            if (!videoShowing) {
+                videoShowing = true;
+                video.play()
+            }
+            else {
+                videoShowing = false;
+                video.pause();
+            }
+        }
+    });
+
     //change css to make overflow visible
     body.style.overflow = "visible";
+
     //start bio animation
     type(bioText);
 
